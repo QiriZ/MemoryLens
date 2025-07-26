@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket摄像头客户端</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .controls {
+            margin: 20px 0;
+            padding: 15px;
+            background: #e8f4fd;
+            border-radius: 5px;
+        }
+        .controls input {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            width: 200px;
+        }
+        .controls button {
+            padding: 8px 15px;
+            margin: 5px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .controls button:hover {
+            background: #0056b3;
+        }
+        .controls button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .status {
+            margin: 20px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .status.connected {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.disconnected {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .video-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        #cameraImage {
+            max-width: 100%;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+        .info {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            flex: 1;
+            margin: 0 5px;
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📹 WebSocket摄像头客户端</h1>
+        
+        <div class="controls">
+            <input type="text" id="serverUrl" placeholder="WebSocket服务器地址" value="ws://localhost:8765">
+            <button id="connectBtn" onclick="connect()">连接</button>
+            <button id="disconnectBtn" onclick="disconnect()" disabled>断开连接</button>
+        </div>
+        
+        <div id="status" class="status disconnected">
+            状态: 未连接
+        </div>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-value" id="fps">0</div>
+                <div class="stat-label">FPS</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="frameCount">0</div>
+                <div class="stat-label">总帧数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="latency">0</div>
+                <div class="stat-label">延迟(ms)</div>
+            </div>
+        </div>
+        
+        <div class="video-container">
+            <img id="cameraImage" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQwIiBoZWlnaHQ9IjQ4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPuekuuS+i+WbvueJhzwvdGV4dD48L3N2Zz4=" alt="摄像头图像">
+        </div>
+        
+        <div class="info">
+            <strong>使用说明：</strong>
+            <ul>
+                <li>输入WebSocket服务器地址（默认: ws://localhost:8765）</li>
+                <li>点击"连接"按钮开始接收摄像头图像</li>
+                <li>图像会实时显示在上方</li>
+                <li>支持局域网访问，使用本机IP地址即可</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let websocket = null;
+        let frameCount = 0;
+        let lastFrameTime = 0;
+        let fps = 0;
+        
+        function connect() {
+            const serverUrl = document.getElementById('serverUrl').value;
+            const connectBtn = document.getElementById('connectBtn');
+            const disconnectBtn = document.getElementById('disconnectBtn');
+            const status = document.getElementById('status');
+            
+            try {
+                websocket = new WebSocket(serverUrl);
+                
+                websocket.onopen = function(event) {
+                    status.textContent = '状态: 已连接';
+                    status.className = 'status connected';
+                    connectBtn.disabled = true;
+                    disconnectBtn.disabled = false;
+                    console.log('WebSocket连接已建立');
+                };
+                
+                websocket.onmessage = function(event) {
+                    try {
+                        const message = JSON.parse(event.data);
+                        
+                        if (message.type === 'image') {
+                            // 显示图像
+                            const img = document.getElementById('cameraImage');
+                            img.src = 'data:image/jpeg;base64,' + message.data;
+                            
+                            // 更新统计信息
+                            frameCount++;
+                            document.getElementById('frameCount').textContent = frameCount;
+                            
+                            // 计算FPS
+                            const now = Date.now();
+                            if (lastFrameTime > 0) {
+                                const frameTime = now - lastFrameTime;
+                                fps = Math.round(1000 / frameTime);
+                                document.getElementById('fps').textContent = fps;
+                                
+                                // 计算延迟
+                                const latency = now - (message.timestamp * 1000);
+                                document.getElementById('latency').textContent = Math.round(latency);
+                            }
+                            lastFrameTime = now;
+                            
+                        } else if (message.type === 'error') {
+                            console.error('服务器错误:', message.message);
+                        }
+                    } catch (e) {
+                        console.error('解析消息错误:', e);
+                    }
+                };
+                
+                websocket.onclose = function(event) {
+                    status.textContent = '状态: 连接已关闭';
+                    status.className = 'status disconnected';
+                    connectBtn.disabled = false;
+                    disconnectBtn.disabled = true;
+                    console.log('WebSocket连接已关闭');
+                };
+                
+                websocket.onerror = function(error) {
+                    status.textContent = '状态: 连接错误';
+                    status.className = 'status disconnected';
+                    connectBtn.disabled = false;
+                    disconnectBtn.disabled = true;
+                    console.error('WebSocket错误:', error);
+                };
+                
+            } catch (error) {
+                console.error('连接错误:', error);
+                alert('连接失败: ' + error.message);
+            }
+        }
+        
+        function disconnect() {
+            if (websocket) {
+                websocket.close();
+                websocket = null;
+            }
+        }
+        
+        // 页面加载时自动填充本地IP
+        window.onload = function() {
+            // 尝试获取本地IP地址
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    // 这里只是示例，实际应该使用局域网IP
+                    // 用户需要手动输入正确的局域网IP
+                })
+                .catch(error => {
+                    console.log('无法获取IP地址，使用默认地址');
+                });
+        };
+    </script>
+</body>
+</html> 

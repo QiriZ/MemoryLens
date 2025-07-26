@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>MemoryLens 需要使用语音识别功能来理解您的语音指令，帮助您查找物品。</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>MemoryLens 需要访问麦克风来接收您的语音指令。</string>
+	<key>NSCameraUsageDescription</key>
+	<string>MemoryLens 需要访问摄像头来识别和定位物品。</string>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationPreferredDefaultSceneSessionRole</key>
+		<string>UISceneSessionRoleImmersiveSpaceApplication</string>
+	</dict>
+</dict>
+</plist>

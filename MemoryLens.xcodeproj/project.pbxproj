@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E7E44FA2E34DE370039A3AD /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7E44F92E34DE370039A3AD /* Environment.swift */; };
+		1E7E44FC2E34E2970039A3AD /* BoxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7E44FB2E34E2970039A3AD /* BoxManager.swift */; };
+		1E7E44FE2E34E30A0039A3AD /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7E44FD2E34E30A0039A3AD /* SpeechRecognizer.swift */; };
+		1E7E45012E3504FA0039A3AD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1E7E45002E3504FA0039A3AD /* Alamofire */; };
+		1ED273AE2E346EE600AE458A /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED273AD2E346EE600AE458A /* CanvasView.swift */; };
+		1ED273B32E34767300AE458A /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED273B22E34767300AE458A /* BoundingBox.swift */; };
+		3046F7902E34867900F0422D /* KeyFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046F78F2E34867900F0422D /* KeyFinder.swift */; };
+		30ABB1272E33E895006A0766 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 30ABB1262E33E895006A0766 /* RealityKitContent */; };
+		30ABB1292E33E895006A0766 /* MemoryLensApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABB1282E33E895006A0766 /* MemoryLensApp.swift */; };
+		30ABB12D2E33E896006A0766 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30ABB12C2E33E896006A0766 /* Assets.xcassets */; };
+		30ABB1302E33E896006A0766 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30ABB12F2E33E896006A0766 /* Preview Assets.xcassets */; };
+		30ABB13B2E33E896006A0766 /* MemoryLensTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABB13A2E33E896006A0766 /* MemoryLensTests.swift */; };
+		30ABB1452E341223006A0766 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABB1442E341223006A0766 /* Socket.swift */; };
+		30ABB1492E341680006A0766 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 30ABB1482E341680006A0766 /* Starscream */; };
+		30ABB14B2E3416BC006A0766 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 30ABB14A2E3416BC006A0766 /* SwiftyJSON */; };
+		30ABB14D2E3420AC006A0766 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABB14C2E3420AC006A0766 /* AudioPlayer.swift */; };
+		30E902A62E345C0500284D70 /* KeyDetection.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 30E902A52E345C0500284D70 /* KeyDetection.mlmodel */; };
+		30FACE6A2E3461E800AAE42C /* ImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FACE692E3461E800AAE42C /* ImmersiveView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		30ABB1372E33E896006A0766 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30ABB1192E33E894006A0766 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30ABB1202E33E895006A0766;
+			remoteInfo = MemoryLens;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1E7E44F92E34DE370039A3AD /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		1E7E44FB2E34E2970039A3AD /* BoxManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxManager.swift; sourceTree = "<group>"; };
+		1E7E44FD2E34E30A0039A3AD /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		1ED273AD2E346EE600AE458A /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		1ED273B22E34767300AE458A /* BoundingBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundingBox.swift; sourceTree = "<group>"; };
+		3046F78F2E34867900F0422D /* KeyFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyFinder.swift; sourceTree = "<group>"; };
+		30ABB1212E33E895006A0766 /* MemoryLens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryLens.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30ABB1252E33E895006A0766 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
+		30ABB1282E33E895006A0766 /* MemoryLensApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryLensApp.swift; sourceTree = "<group>"; };
+		30ABB12C2E33E896006A0766 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		30ABB12F2E33E896006A0766 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		30ABB1312E33E896006A0766 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30ABB1362E33E896006A0766 /* MemoryLensTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoryLensTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30ABB13A2E33E896006A0766 /* MemoryLensTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryLensTests.swift; sourceTree = "<group>"; };
+		30ABB1442E341223006A0766 /* Socket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
+		30ABB14C2E3420AC006A0766 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		30E902A52E345C0500284D70 /* KeyDetection.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = KeyDetection.mlmodel; sourceTree = "<group>"; };
+		30FACE692E3461E800AAE42C /* ImmersiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		30ABB11E2E33E895006A0766 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30ABB14B2E3416BC006A0766 /* SwiftyJSON in Frameworks */,
+				1E7E45012E3504FA0039A3AD /* Alamofire in Frameworks */,
+				30ABB1272E33E895006A0766 /* RealityKitContent in Frameworks */,
+				30ABB1492E341680006A0766 /* Starscream in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30ABB1332E33E896006A0766 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1ED273AF2E34766300AE458A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1ED273B22E34767300AE458A /* BoundingBox.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		30ABB1182E33E894006A0766 = {
+			isa = PBXGroup;
+			children = (
+				30ABB1232E33E895006A0766 /* MemoryLens */,
+				30ABB1242E33E895006A0766 /* Packages */,
+				30ABB1392E33E896006A0766 /* MemoryLensTests */,
+				30ABB1222E33E895006A0766 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		30ABB1222E33E895006A0766 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				30ABB1212E33E895006A0766 /* MemoryLens.app */,
+				30ABB1362E33E896006A0766 /* MemoryLensTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		30ABB1232E33E895006A0766 /* MemoryLens */ = {
+			isa = PBXGroup;
+			children = (
+				30FACE642E3461AF00AAE42C /* App */,
+				1ED273AF2E34766300AE458A /* Model */,
+				30FACE652E3461B300AAE42C /* View */,
+				30FACE682E3461D300AAE42C /* Module */,
+				30FACE662E3461C000AAE42C /* MLModel */,
+				30ABB12E2E33E896006A0766 /* Preview Content */,
+			);
+			path = MemoryLens;
+			sourceTree = "<group>";
+		};
+		30ABB1242E33E895006A0766 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				30ABB1252E33E895006A0766 /* RealityKitContent */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		30ABB12E2E33E896006A0766 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				30ABB12F2E33E896006A0766 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		30ABB1392E33E896006A0766 /* MemoryLensTests */ = {
+			isa = PBXGroup;
+			children = (
+				30ABB13A2E33E896006A0766 /* MemoryLensTests.swift */,
+			);
+			path = MemoryLensTests;
+			sourceTree = "<group>";
+		};
+		30FACE642E3461AF00AAE42C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				30ABB1282E33E895006A0766 /* MemoryLensApp.swift */,
+				1E7E44F92E34DE370039A3AD /* Environment.swift */,
+				30ABB12C2E33E896006A0766 /* Assets.xcassets */,
+				30ABB1312E33E896006A0766 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		30FACE652E3461B300AAE42C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				30FACE692E3461E800AAE42C /* ImmersiveView.swift */,
+				1ED273AD2E346EE600AE458A /* CanvasView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		30FACE662E3461C000AAE42C /* MLModel */ = {
+			isa = PBXGroup;
+			children = (
+				3046F78F2E34867900F0422D /* KeyFinder.swift */,
+				30E902A52E345C0500284D70 /* KeyDetection.mlmodel */,
+			);
+			path = MLModel;
+			sourceTree = "<group>";
+		};
+		30FACE682E3461D300AAE42C /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				30ABB1442E341223006A0766 /* Socket.swift */,
+				30ABB14C2E3420AC006A0766 /* AudioPlayer.swift */,
+				1E7E44FB2E34E2970039A3AD /* BoxManager.swift */,
+				1E7E44FD2E34E30A0039A3AD /* SpeechRecognizer.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		30ABB1202E33E895006A0766 /* MemoryLens */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30ABB13E2E33E896006A0766 /* Build configuration list for PBXNativeTarget "MemoryLens" */;
+			buildPhases = (
+				30ABB11D2E33E895006A0766 /* Sources */,
+				30ABB11E2E33E895006A0766 /* Frameworks */,
+				30ABB11F2E33E895006A0766 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MemoryLens;
+			packageProductDependencies = (
+				30ABB1262E33E895006A0766 /* RealityKitContent */,
+				30ABB1482E341680006A0766 /* Starscream */,
+				30ABB14A2E3416BC006A0766 /* SwiftyJSON */,
+				1E7E45002E3504FA0039A3AD /* Alamofire */,
+			);
+			productName = MemoryLens;
+			productReference = 30ABB1212E33E895006A0766 /* MemoryLens.app */;
+			productType = "com.apple.product-type.application";
+		};
+		30ABB1352E33E896006A0766 /* MemoryLensTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30ABB1412E33E896006A0766 /* Build configuration list for PBXNativeTarget "MemoryLensTests" */;
+			buildPhases = (
+				30ABB1322E33E896006A0766 /* Sources */,
+				30ABB1332E33E896006A0766 /* Frameworks */,
+				30ABB1342E33E896006A0766 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30ABB1382E33E896006A0766 /* PBXTargetDependency */,
+			);
+			name = MemoryLensTests;
+			productName = MemoryLensTests;
+			productReference = 30ABB1362E33E896006A0766 /* MemoryLensTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		30ABB1192E33E894006A0766 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					30ABB1202E33E895006A0766 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					30ABB1352E33E896006A0766 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 30ABB1202E33E895006A0766;
+					};
+				};
+			};
+			buildConfigurationList = 30ABB11C2E33E894006A0766 /* Build configuration list for PBXProject "MemoryLens" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 30ABB1182E33E894006A0766;
+			packageReferences = (
+				30ABB1462E3415F2006A0766 /* XCRemoteSwiftPackageReference "Starscream" */,
+				30ABB1472E34162E006A0766 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				1E7E44FF2E3504FA0039A3AD /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
+			productRefGroup = 30ABB1222E33E895006A0766 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				30ABB1202E33E895006A0766 /* MemoryLens */,
+				30ABB1352E33E896006A0766 /* MemoryLensTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		30ABB11F2E33E895006A0766 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30ABB1302E33E896006A0766 /* Preview Assets.xcassets in Resources */,
+				30ABB12D2E33E896006A0766 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30ABB1342E33E896006A0766 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		30ABB11D2E33E895006A0766 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30ABB14D2E3420AC006A0766 /* AudioPlayer.swift in Sources */,
+				30FACE6A2E3461E800AAE42C /* ImmersiveView.swift in Sources */,
+				1E7E44FE2E34E30A0039A3AD /* SpeechRecognizer.swift in Sources */,
+				1ED273B32E34767300AE458A /* BoundingBox.swift in Sources */,
+				1E7E44FC2E34E2970039A3AD /* BoxManager.swift in Sources */,
+				3046F7902E34867900F0422D /* KeyFinder.swift in Sources */,
+				1E7E44FA2E34DE370039A3AD /* Environment.swift in Sources */,
+				1ED273AE2E346EE600AE458A /* CanvasView.swift in Sources */,
+				30ABB1292E33E895006A0766 /* MemoryLensApp.swift in Sources */,
+				30ABB1452E341223006A0766 /* Socket.swift in Sources */,
+				30E902A62E345C0500284D70 /* KeyDetection.mlmodel in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30ABB1322E33E896006A0766 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30ABB13B2E33E896006A0766 /* MemoryLensTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		30ABB1382E33E896006A0766 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30ABB1202E33E895006A0766 /* MemoryLens */;
+			targetProxy = 30ABB1372E33E896006A0766 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		30ABB13C2E33E896006A0766 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = xros;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				XROS_DEPLOYMENT_TARGET = 1.2;
+			};
+			name = Debug;
+		};
+		30ABB13D2E33E896006A0766 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = xros;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				XROS_DEPLOYMENT_TARGET = 1.2;
+			};
+			name = Release;
+		};
+		30ABB13F2E33E896006A0766 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MemoryLens/Preview Content\"";
+				DEVELOPMENT_TEAM = NNNHC745UY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ADVX25ML.MemoryLens;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Debug;
+		};
+		30ABB1402E33E896006A0766 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MemoryLens/Preview Content\"";
+				DEVELOPMENT_TEAM = NNNHC745UY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ADVX25ML.MemoryLens;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Release;
+		};
+		30ABB1422E33E896006A0766 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ADVX25ML.MemoryLensTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MemoryLens.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MemoryLens";
+				XROS_DEPLOYMENT_TARGET = 1.2;
+			};
+			name = Debug;
+		};
+		30ABB1432E33E896006A0766 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ADVX25ML.MemoryLensTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MemoryLens.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MemoryLens";
+				XROS_DEPLOYMENT_TARGET = 1.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		30ABB11C2E33E894006A0766 /* Build configuration list for PBXProject "MemoryLens" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30ABB13C2E33E896006A0766 /* Debug */,
+				30ABB13D2E33E896006A0766 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30ABB13E2E33E896006A0766 /* Build configuration list for PBXNativeTarget "MemoryLens" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30ABB13F2E33E896006A0766 /* Debug */,
+				30ABB1402E33E896006A0766 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30ABB1412E33E896006A0766 /* Build configuration list for PBXNativeTarget "MemoryLensTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30ABB1422E33E896006A0766 /* Debug */,
+				30ABB1432E33E896006A0766 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1E7E44FF2E3504FA0039A3AD /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		30ABB1462E3415F2006A0766 /* XCRemoteSwiftPackageReference "Starscream" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daltoniam/Starscream";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.8;
+			};
+		};
+		30ABB1472E34162E006A0766 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1E7E45002E3504FA0039A3AD /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E7E44FF2E3504FA0039A3AD /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		30ABB1262E33E895006A0766 /* RealityKitContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RealityKitContent;
+		};
+		30ABB1482E341680006A0766 /* Starscream */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30ABB1462E3415F2006A0766 /* XCRemoteSwiftPackageReference "Starscream" */;
+			productName = Starscream;
+		};
+		30ABB14A2E3416BC006A0766 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30ABB1472E34162E006A0766 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 30ABB1192E33E894006A0766 /* Project object */;
+}
